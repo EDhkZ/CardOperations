@@ -64,13 +64,14 @@ public class Card {
             payStatus = withdrawal(sumPay);
             String transaction = null;
             if (payStatus) { // payStatus == true
-                transaction = paySystem + " " + numberCard + ": " + " Оплачено " + sumPay + " Остаток на сёте " + deposit;
+                transaction = paySystem + " " + numberCard + ":Хаха " + " Оплачено " + sumPay + " Остаток на сёте " + deposit;
                 setTransactions(transaction);
             } else {
                 tryed++;
                 System.out.println(transaction);
             }
         } while (!payStatus && tryed < 3);
+        //Это я уже сделал
         /*
         TODO: перевести сумму на счёт магазина
          */
