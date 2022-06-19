@@ -97,7 +97,8 @@ public class Card {
                 System.out.println("Ќедостаточно средств дл€ перевода, пополните карту");
             }
         }while (!transferStatus && errortransfer < 3);
-        //и перевести деньги на другую карту
+        // перевести деньги на другую карту
+        //и перевести деньги банку
     }
 
     private boolean withdrawal(float sum) {
