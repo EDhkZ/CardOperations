@@ -60,49 +60,49 @@ public class Card {
         this.Currency = Currency;}
 
     public void pay(float sumPay) {
-        //списать сумму покупки с карты
+        //Г±ГЇГЁГ±Г ГІГј Г±ГіГ¬Г¬Гі ГЇГ®ГЄГіГЇГЄГЁ Г± ГЄГ Г°ГІГ»
         boolean payStatus;
         byte tryed=0;
         do {
             payStatus = withdrawal(sumPay);
             String transaction = null;
             if (payStatus) { // payStatus == true
-                transaction = paySystem + " " + numberCard + ":" + " Оплата товара " + sumPay + Currency + " Остаток на сёте " + deposit + Currency;
+                transaction = paySystem + " " + numberCard + ":Г•Г ГµГ  " + " ГЏГ®ГЄГіГЇГЄГ  " + sumPay + " ГЋГ±ГІГ ГІГ®ГЄ Г­Г  Г±ВёГІГҐ " + deposit;
                 setTransactions(transaction);
             } else {
                 tryed++;
                 System.out.println(transaction);
             }
         } while (!payStatus && tryed < 3);
-        //Это я уже сделал
+        //ГќГІГ® Гї ГіГ¦ГҐ Г±Г¤ГҐГ«Г Г«
         /*
-        TODO: перевести сумму на счёт магазина
+        TODO: ГЇГҐГ°ГҐГўГҐГ±ГІГЁ Г±ГіГ¬Г¬Гі Г­Г  Г±Г·ВёГІ Г¬Г ГЈГ Г§ГЁГ­Г 
          */
     }
 
     public void transfer(float sumTransfer) {
-        //нужно рассчитать коммисию за перевод
+        //Г­ГіГ¦Г­Г® Г°Г Г±Г±Г·ГЁГІГ ГІГј ГЄГ®Г¬Г¬ГЁГ±ГЁГѕ Г§Г  ГЇГҐГ°ГҐГўГ®Г¤
         float comission;
         if (sumTransfer < 50000) {
             comission = 0.0f;
         } else {comission = sumTransfer * 0.01f;}
 
-        //затем списать деньги с карты
+        //Г§Г ГІГҐГ¬ Г±ГЇГЁГ±Г ГІГј Г¤ГҐГ­ГјГЈГЁ Г± ГЄГ Г°ГІГ»
         boolean transferStatus;
         float amount = sumTransfer+comission;
         byte errortransfer = 0;
         do {
             transferStatus = withdrawal(amount);
             if (deposit > amount) {
-                String transaction = paySystem + " " + numberCard + ": " + " Переведено " + sumTransfer + Currency + " Комиссия составила " + comission + Currency + " Остаток на счёте " + deposit + Currency;
+                String transaction = paySystem + " " + numberCard + ": " + " ГЏГҐГ°ГҐГўГҐГ¤ГҐГ­Г® " + sumTransfer + Currency + " ГЉГ®Г¬ГЁГ±Г±ГЁГї Г±Г®Г±ГІГ ГўГЁГ«Г  " + comission + Currency + " ГЋГ±ГІГ ГІГ®ГЄ Г­Г  Г±Г·ВёГІГҐ " + deposit + Currency;
                 setTransactions(transaction);
             } else {
                 errortransfer++;
-                System.out.println("Недостаточно средств для перевода, пополните карту");
+                System.out.println("ГЌГҐГ¤Г®Г±ГІГ ГІГ®Г·Г­Г® Г±Г°ГҐГ¤Г±ГІГў Г¤Г«Гї ГЇГҐГ°ГҐГўГ®Г¤Г , ГЇГ®ГЇГ®Г«Г­ГЁГІГҐ ГЄГ Г°ГІГі");
             }
         }while (!transferStatus && errortransfer < 3);
-        // перевести деньги на другую карту
-        //и перевести деньги банку
+        // ГЇГҐГ°ГҐГўГҐГ±ГІГЁ Г¤ГҐГ­ГјГЈГЁ Г­Г  Г¤Г°ГіГЈГіГѕ ГЄГ Г°ГІГі
+        //ГЁ ГЇГҐГ°ГҐГўГҐГ±ГІГЁ Г¤ГҐГ­ГјГЈГЁ ГЎГ Г­ГЄГі
     }
 
     private boolean withdrawal(float sum) {
