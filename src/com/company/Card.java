@@ -64,7 +64,7 @@ public class Card {
             payStatus = withdrawal(sumPay);
             String transaction = null;
             if (payStatus) { // payStatus == true
-                transaction = paySystem + " " + numberCard + ":Хаха " + " Оплачено " + sumPay + " Остаток на сёте " + deposit;
+                transaction = paySystem + " " + numberCard + ":Хаха " + " Покупка " + sumPay + " Остаток на сёте " + deposit;
                 setTransactions(transaction);
             } else {
                 tryed++;
