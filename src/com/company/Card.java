@@ -12,7 +12,7 @@ public class Card {
 
     private String[] transactions = new String[50];
 
-    private String currency;
+    private char Currency;//'?'
 
     public float getDeposit() {
         return deposit;
@@ -54,7 +54,10 @@ public class Card {
         this.transactions[countTransactions++] = transactions;
     }
 
-
+    public char getCurrency()  {
+        return Currency;}
+    public void setCurrency(char currency) {
+        this.Currency = Currency;}
 
     public void pay(float sumPay) {
         //списать сумму покупки с карты
@@ -64,7 +67,7 @@ public class Card {
             payStatus = withdrawal(sumPay);
             String transaction = null;
             if (payStatus) { // payStatus == true
-                transaction = paySystem + " " + numberCard + ":Хаха " + " Оплачено " + sumPay + " Остаток на сёте " + deposit;
+                transaction = paySystem + " " + numberCard + ":" + " Оплата товара " + sumPay + Currency + " Остаток на сёте " + deposit + Currency;
                 setTransactions(transaction);
             } else {
                 tryed++;
@@ -91,7 +94,7 @@ public class Card {
         do {
             transferStatus = withdrawal(amount);
             if (deposit > amount) {
-                String transaction = paySystem + " " + numberCard + ": " + " Переведено " + sumTransfer + " Комиссия составила " + comission + " Остаток на счёте " + deposit;
+                String transaction = paySystem + " " + numberCard + ": " + " Переведено " + sumTransfer + Currency + " Комиссия составила " + comission + Currency + " Остаток на счёте " + deposit + Currency;
                 setTransactions(transaction);
             } else {
                 errortransfer++;

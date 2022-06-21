@@ -7,6 +7,7 @@ public class Main {
         visaCard.setDeposit(7100.00f);
         visaCard.setNumberCard("1111 1111 1111 1111");
         visaCard.setPaySystem("VISA");
+        visaCard.setCurrency('?');
         visaCard.pay(100.50f);
         visaCard.pay(250.00f);
         visaCard.transfer(100.00f);
@@ -22,6 +23,7 @@ public class Main {
         Card mastercard = new Card();
         mastercard.setDeposit(5600.00f);
         mastercard.setNumberCard("2222 2222 2222 2222");
+        mastercard.setCurrency('$');
         mastercard.setPaySystem("MASTERCARD");
         mastercard.pay(500.25f);
 
