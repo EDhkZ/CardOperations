@@ -56,7 +56,7 @@ public class Card {
 
     public char getCurrency()  {
         return Currency;}
-    public void setCurrency(char currency) {
+    public void setCurrency(char Currency) {
         this.Currency = Currency;}
 
     public void pay(float sumPay) {
@@ -67,7 +67,7 @@ public class Card {
             payStatus = withdrawal(sumPay);
             String transaction = null;
             if (payStatus) { // payStatus == true
-                transaction = paySystem + " " + numberCard + ":Õàõà " + " Ïîêóïêà " + sumPay + " Îñòàòîê íà ñ¸òå " + deposit;
+                transaction = paySystem + " " + numberCard + ":оплата покупки " + sumPay + " остаток на карте" + deposit;
                 setTransactions(transaction);
             } else {
                 tryed++;
@@ -94,15 +94,15 @@ public class Card {
         do {
             transferStatus = withdrawal(amount);
             if (deposit > amount) {
-                String transaction = paySystem + " " + numberCard + ": " + " Ïåðåâåäåíî " + sumTransfer + Currency + " Êîìèññèÿ ñîñòàâèëà " + comission + Currency + " Îñòàòîê íà ñ÷¸òå " + deposit + Currency;
+                String transaction = paySystem + " " + numberCard + ": " + " сумма перевода " + sumTransfer + Currency + " комиссиия " + comission + Currency + " баланс на счете " + deposit + Currency;
                 setTransactions(transaction);
             } else {
                 errortransfer++;
-                System.out.println("Íåäîñòàòî÷íî ñðåäñòâ äëÿ ïåðåâîäà, ïîïîëíèòå êàðòó");
+                System.out.println("Херня");
             }
         }while (!transferStatus && errortransfer < 3);
         // ïåðåâåñòè äåíüãè íà äðóãóþ êàðòó
-        //è ïåðåâåñòè äåíüãè áàíêó
+        //è ïåðåâåñòè äåíüãè áàíêó привет
     }
 
     private boolean withdrawal(float sum) {

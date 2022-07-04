@@ -7,7 +7,7 @@ public class Main {
         visaCard.setDeposit(7100.00f);
         visaCard.setNumberCard("1111 1111 1111 1111");
         visaCard.setPaySystem("VISA");
-        visaCard.setCurrency('?');
+        visaCard.setCurrency('в‚Ѕ');
         visaCard.pay(100.50f);
         visaCard.pay(250.00f);
         visaCard.transfer(100.00f);
@@ -33,7 +33,7 @@ public class Main {
         unionPay.setPaySystem("UNIONPAY");
         unionPay.pay(100.00f);
 
-        //создадим массив карт
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         Card[] cards = new Card[3];
         cards[0] = visaCard;
         cards[1] = mastercard;
