@@ -101,8 +101,15 @@ public class Card {
                 System.out.println("Херня");
             }
         }while (!transferStatus && errortransfer < 3);
-        // ïåðåâåñòè äåíüãè íà äðóãóþ êàðòó
+        // перевести деньги на другую карту
         //è ïåðåâåñòè äåíüãè áàíêó привет
+    }
+
+    public void depositing (float sumDepositing){
+        //внесение денег на карту
+        deposit= deposit + sumDepositing;
+        String transaction = paySystem + " " + numberCard + ": " + " внесено " + sumDepositing + Currency + " баланс на счете " + deposit + Currency;
+        setTransactions(transaction);
     }
 
     private boolean withdrawal(float sum) {
