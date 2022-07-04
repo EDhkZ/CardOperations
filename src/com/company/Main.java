@@ -31,9 +31,10 @@ public class Main {
         unionPay.setDeposit(6000.00f);
         unionPay.setNumberCard("3333 3333 3333 3333");
         unionPay.setPaySystem("UNIONPAY");
+        unionPay.setCurrency('€');
         unionPay.pay(100.00f);
+// add card
 
-        //�������� ������ ����
         Card[] cards = new Card[3];
         cards[0] = visaCard;
         cards[1] = mastercard;
@@ -41,7 +42,7 @@ public class Main {
 
         cards[0].pay(100.00f);
         cards[1].pay(200.00f);
-        cards[2].pay(300.00f);
+        cards[2].transfer(300.00f);
 
 
         System.out.println("Transactions on all cards: ");
